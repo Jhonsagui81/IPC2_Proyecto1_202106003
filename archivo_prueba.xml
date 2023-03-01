@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<datosMarte>
+    <listaOrganismos>
+        <organismo>
+            <codigo>[valorAlfanumérico]</codigo>
+            <nombre>[valorAlfanumérico]</nombre>
+        </organismo>
+...multiplica por la cantidad de organismos
+    </listaOrganismos>
+    <listadoMuestras>
+        <muestra>
+            <codigo>[valorAlfanumérico]</codigo>
+            <descripcion>[valorAlfanumérico]</descripcion>
+            <filas>[valorNumérico]</filas>
+            <columnas>[valorNumérico]</columnas>
+                <listadoCeldasVivas>
+                    <celdaViva>
+                        <fila>[valorNumérico]</fila>
+                        <columna>[valorNumérico]</columna>
+                        <codigoOrganismo>[valorAlfanumérico]<codigoOrganismo>
+                    </celdaViva>
+....
+                </listadoCeldasVivas>
+        </muestra>
+....
+    </listadoMuestras>
+</datosMarte>
+

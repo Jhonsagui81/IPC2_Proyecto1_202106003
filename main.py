@@ -5,7 +5,11 @@ from colorama import Fore
 from lectura import LecturaXML
 
 my_muestras = ListaMuestra()
-my_celdas_vivas = ListaCeldas()
+celdas_1 = ListaCeldas()
+celdas_2 = ListaCeldas()
+celdas_3 = ListaCeldas()
+celdas_4 = ListaCeldas()
+celdas_5 = ListaCeldas()
 my_organismos = ListaOrganismos()
 
 while True:
@@ -32,9 +36,29 @@ while True:
         menu_principal_str = input(Fore.CYAN +"Ingrese un valor para seleccionar una opcion: ")
         menu_principal = int(menu_principal_str)    #Parseando opcion 
         if menu_principal == 1:   #Opcion 1 del menu principal
-            LecturaXML(my_muestras,my_celdas_vivas, my_organismos)   #funcion para cargar archivo
+            LecturaXML(my_muestras,celdas_1,celdas_2,celdas_3,celdas_4,celdas_5, my_organismos)   #funcion para cargar archivo
+            print(Fore.GREEN+"\nEn este documento se encuentran "+str(my_organismos.ObtenerNodos())+" organismos los cuales son: ")
+            print(Fore.GREEN+ my_organismos.ImprimirOrganismos())
+
         if menu_principal == 2:     #Opcion 2 del menu principal
             # GestionadorPeliculas() #funcion para mostrar sub menu Gestionador
+            codig_muestra = input("Por favor ingrese el codigo de la muestra a analizar: ")
+            print(my_muestras.BuscarMuestra(codig_muestra))
+            
+            organis = input(Fore.CYAN+"\nIngrese el codigo del organismo que desea estudiar: ")
+            print(Fore.LIGHTYELLOW_EX+"El organismo puede prosperar en las siguientes posiciones: ")
+            numero_muestra = my_muestras.BuscarId(codig_muestra)
+            if numero_muestra == 1:
+                print(Fore.LIGHTYELLOW_EX+celdas_1.BuscarOrganismo(codig_muestra, organis, celdas_1))
+            if numero_muestra == 2:
+                print(Fore.LIGHTYELLOW_EX+celdas_2.BuscarOrganismo(codig_muestra, organis, celdas_2))
+            if numero_muestra == 3:
+                print(Fore.LIGHTYELLOW_EX+celdas_3.BuscarOrganismo(codig_muestra, organis, celdas_3))
+            if numero_muestra == 4:
+                print(Fore.LIGHTYELLOW_EX+celdas_4.BuscarOrganismo(codig_muestra, organis, celdas_4))
+            if numero_muestra == 5:
+                print(Fore.LIGHTYELLOW_EX+celdas_5.BuscarOrganismo(codig_muestra, organis, celdas_5))
+            
             '''
             [1].  Ingrese el codigo de la muestra
                 -Estas son las corrdenadas donde puede vivir x organismo de la propia muestra (repite con todos organismos)

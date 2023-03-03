@@ -27,18 +27,33 @@ class NodoCeldas:
 
 class NodoMuestra: 
 
-    def __init__(self, codigo, descripcion, limite_vertical, limite_horizontal, celdasvivas):
-        self.Muestra = DatoMuestra(codigo, descripcion, limite_vertical, limite_horizontal, celdasvivas)
+    def __init__(self, id, codigo, descripcion, limite_vertical, limite_horizontal, celdasvivas):
+        self.Muestra = DatoMuestra(id, codigo, descripcion, limite_vertical, limite_horizontal, celdasvivas)
         self.Siguiente = None
-
+    
+    def ObtenerId(self):
+        return self.Muestra.id
+    
     def ObtenerSiguiente(self):
         return self.Siguiente
     
     def AsignarSiguiente(self, Nodo):
         self.Siguiente = Nodo
 
-    def Obtener(self):
-        self.Muestra.celda_viva.Imprimir()
+    def ObtenerCodigo(self):
+        return self.Muestra.codigo
+    
+    def ObtenerDescripcion(self):
+        return self.Muestra.descripcion
+    
+    def ObtenerLimiteVertical(self):
+        return self.Muestra.limite_vert
+    
+    def ObtenerHorizontal(self):
+        return self.Muestra.limite_hori
+    
+    def ObtenerCeldaViva(self):
+        return self.Muestra.celda_viva
 
 class NodoOrganismo:
 

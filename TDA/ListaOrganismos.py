@@ -40,3 +40,14 @@ class ListaOrganismos:
             if codigo_organismo == aux.ObtenerCodigo():
                 return aux.ObtenerColor()  
             aux = aux.Siguiente        
+
+    def ObtenerNodos(self):
+        return self.limite
+
+    def ImprimirOrganismos(self):
+        Auxiliar = self.Inicio
+        Retorno = ""
+        while Auxiliar != None:
+            Retorno += "--> Organismo: "+str(Auxiliar.ObtenerNombre())+"   Codigo : "+str(Auxiliar.ObtenerCodigo())+"\n"
+            Auxiliar = Auxiliar.Siguiente
+        return Retorno

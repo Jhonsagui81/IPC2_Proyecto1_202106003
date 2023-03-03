@@ -1,6 +1,7 @@
 class DatoMuestra:
 
-    def __init__(self, codigo, descripcion, limite_vertical, limite_horizontal, celda_viva):
+    def __init__(self, id, codigo, descripcion, limite_vertical, limite_horizontal, celda_viva):
+        self.id = id
         self.codigo = codigo
         self.descripcion = descripcion
         self.limite_vert = limite_vertical

@@ -1,3 +1,4 @@
+from colorama import Fore
 from .Nodo import NodoMuestra
 
 class ListaMuestra:
@@ -8,7 +9,7 @@ class ListaMuestra:
         self.Limite = 1
     
     def Insertar(self, codigo, descripcion, limite_vertical, limite_horizontal, celdasvivas):
-        NuevoNodo = NodoMuestra(codigo, descripcion, limite_vertical, limite_horizontal, celdasvivas)
+        NuevoNodo = NodoMuestra(self.Limite,codigo, descripcion, limite_vertical, limite_horizontal, celdasvivas)
         if self.Inicio == None:
             self.Inicio = NuevoNodo
             self.Final = NuevoNodo
@@ -17,8 +18,26 @@ class ListaMuestra:
             self.Limite += 1
             self.Final.AsignarSiguiente(NuevoNodo)
             self.Final = NuevoNodo
-    
-    def Imprimir(self):
-        Aux = self.Inicio
-        Aux.Obtener()
-        print("Este es metodo de Lista muestra ")
+
+    def BuscarMuestra(self, codigo):
+        if self.Inicio == None:
+            return None
+        Retorno = ""
+        Auxiliar = self.Inicio
+        while Auxiliar != None:
+            if Auxiliar.ObtenerCodigo() == codigo:
+                Retorno += Fore.LIGHTGREEN_EX+"La muestra es: "+str(Auxiliar.ObtenerCodigo())+" Y se describe por: "+str(Auxiliar.ObtenerDescripcion())+"\n"
+                return Retorno
+            else:
+                Auxiliar = Auxiliar.Siguiente
+        return False
+
+    def BuscarId(self, codigo):
+        if self.Inicio == None:
+            return None
+        Auxiliar = self.Inicio
+        while Auxiliar != None:
+            if Auxiliar.ObtenerCodigo() == codigo:
+                id = Auxiliar.ObtenerId()
+                return id
+            Auxiliar = Auxiliar.Siguiente

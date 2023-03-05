@@ -41,3 +41,21 @@ class ListaMuestra:
                 id = Auxiliar.ObtenerId()
                 return id
             Auxiliar = Auxiliar.Siguiente
+
+    def LimiteVertical(self, codigo):
+        if self.Inicio == None:
+            return None
+        aux = self.Inicio
+        while aux != None:
+            if aux.ObtenerCodigo() == codigo:
+                return aux.ObtenerLimiteVertical()
+            aux = aux.Siguiente
+
+    def LimiteHorizontal(self, codigo):
+        if self.Inicio == None:
+            return None
+        aux = self.Inicio
+        while aux != None:
+            if aux.ObtenerCodigo() == codigo:
+                return aux.ObtenerHorizontal()
+            aux = aux.Siguiente

@@ -47,17 +47,19 @@ while True:
             
             organis = input(Fore.CYAN+"\nIngrese el codigo del organismo que desea estudiar: ")
             print(Fore.LIGHTYELLOW_EX+"El organismo puede prosperar en las siguientes posiciones: ")
-            numero_muestra = my_muestras.BuscarId(codig_muestra)
+            numero_muestra = my_muestras.BuscarId(codig_muestra) #Para saber que lista de la muestra usar 
+            limite_vertical = my_muestras.LimiteVertical(codig_muestra) #Obtener limite vertical
+            limite_horizontal = my_muestras.LimiteHorizontal(codig_muestra) #obtener limite horizontal
             if numero_muestra == 1:
-                print(Fore.LIGHTYELLOW_EX+celdas_1.BuscarOrganismoPuedeProsperar(codig_muestra, organis, celdas_1))
+                print(Fore.LIGHTYELLOW_EX+celdas_1.BuscarOrganismoPuedeProsperar(limite_vertical,limite_horizontal, organis, celdas_1))
             if numero_muestra == 2:
-                print(Fore.LIGHTYELLOW_EX+celdas_2.BuscarOrganismoPuedeProsperar(codig_muestra, organis, celdas_2))
+                print(Fore.LIGHTYELLOW_EX+celdas_2.BuscarOrganismoPuedeProsperar(limite_vertical,limite_horizontal, organis, celdas_2))
             if numero_muestra == 3:
-                print(Fore.LIGHTYELLOW_EX+celdas_3.BuscarOrganismoPuedeProsperar(codig_muestra, organis, celdas_3))
+                print(Fore.LIGHTYELLOW_EX+celdas_3.BuscarOrganismoPuedeProsperar(limite_vertical,limite_horizontal, organis, celdas_3))
             if numero_muestra == 4:
-                print(Fore.LIGHTYELLOW_EX+celdas_4.BuscarOrganismoPuedeProsperar(codig_muestra, organis, celdas_4))
+                print(Fore.LIGHTYELLOW_EX+celdas_4.BuscarOrganismoPuedeProsperar(limite_vertical,limite_horizontal, organis, celdas_4))
             if numero_muestra == 5:
-                print(Fore.LIGHTYELLOW_EX+celdas_5.BuscarOrganismoPuedeProsperar(codig_muestra, organis, celdas_5))
+                print(Fore.LIGHTYELLOW_EX+celdas_5.BuscarOrganismoPuedeProsperar(limite_vertical,limite_horizontal, organis, celdas_5))
             
             '''
             [1].  Ingrese el codigo de la muestra

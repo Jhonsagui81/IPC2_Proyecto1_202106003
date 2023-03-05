@@ -33,15 +33,13 @@ class ListaCeldas:
                     aux = self.Inicio
                     contFila_inferior_derecha = 2
                     contColu_inferior_derecha = 2
-                    while aux != None:
-                        if aux.ObtenerOrganismoVivo() == color:
-                            contFila_inferior_derecha += 1
-                            contColu_inferior_derecha += 1
-                            aux = self.Inicio   
+                    while aux != None: 
                         if listaCeldas.BuscarPosicionDiferente(fila+contFila_inferior_derecha, columna+contColu_inferior_derecha, color):
                             contFila_inferior_derecha += 1
                             contColu_inferior_derecha += 1
-                            aux = self.Inicio                            
+                            aux = self.Inicio  
+                            if listaCeldas.BuscarPosicionIdentica(fila+contFila_inferior_derecha, columna+contColu_inferior_derecha, color):
+                                break                          
                         if not (listaCeldas.BuscarPosicionDiferente(fila+contFila_inferior_derecha, columna+contColu_inferior_derecha, color)): 
                             print("Auxiliar en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(fila+contFila_inferior_derecha)+" Columna: "+str(columna+contColu_inferior_derecha))
                             break
@@ -52,14 +50,12 @@ class ListaCeldas:
                     contFila_inferior_izquierda = 2
                     contColu_inferior_izquierda = 2
                     while aux != None:
-                        if aux.ObtenerOrganismoVivo() == color:
-                            contFila_inferior_izquierda += 1
-                            contColu_inferior_izquierda += 1
-                            aux = self.Inicio  
                         if listaCeldas.BuscarPosicionDiferente(fila+contFila_inferior_izquierda, columna-contColu_inferior_izquierda, color):
                             contFila_inferior_izquierda += 1
                             contColu_inferior_izquierda += 1
-                            aux = self.Inicio                            
+                            aux = self.Inicio  
+                            if listaCeldas.BuscarPosicionIdentica(fila+contFila_inferior_izquierda, columna-contColu_inferior_izquierda, color):
+                                break                           
                         if not (listaCeldas.BuscarPosicionDiferente(fila+contFila_inferior_izquierda, columna-contColu_inferior_izquierda, color)): 
                             print("Auxiliar en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(fila+contFila_inferior_izquierda)+" Columna: "+str(columna-contColu_inferior_izquierda))
                             break
@@ -69,15 +65,13 @@ class ListaCeldas:
                     aux = self.Inicio
                     contFila_superior_derecha = 2
                     contColu_superior_derecha = 2
-                    while aux != None:
-                        if aux.ObtenerOrganismoVivo() == color:
-                            contFila_superior_derecha += 1
-                            contColu_superior_derecha += 1
-                            aux = self.Inicio  
+                    while aux != None:  
                         if listaCeldas.BuscarPosicionDiferente(fila-contFila_superior_derecha, columna+contColu_superior_derecha, color):
                             contFila_superior_derecha += 1
                             contColu_superior_derecha += 1
-                            aux = self.Inicio                            
+                            aux = self.Inicio 
+                            if listaCeldas.BuscarPosicionIdentica(fila-contFila_superior_derecha, columna+contColu_superior_derecha, color):
+                                break                           
                         if not (listaCeldas.BuscarPosicionDiferente(fila-contFila_superior_derecha, columna+contColu_superior_derecha, color)): 
                             print("Auxiliar en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(fila-contFila_superior_derecha)+" Columna: "+str(columna+contColu_superior_derecha))
                             break
@@ -88,14 +82,12 @@ class ListaCeldas:
                     contFila_superior_izquierda = 2
                     contColu_superior_izquierda = 2
                     while aux != None:
-                        if aux.ObtenerOrganismoVivo() == color:
-                            contFila_superior_izquierda += 1
-                            contColu_superior_izquierda += 1
-                            aux = self.Inicio 
                         if listaCeldas.BuscarPosicionDiferente(fila-contFila_superior_izquierda, columna-contColu_superior_izquierda, color):
                             contFila_superior_izquierda += 1
                             contColu_superior_izquierda += 1
-                            aux = self.Inicio                            
+                            aux = self.Inicio
+                            if listaCeldas.BuscarPosicionIdentica(fila-contFila_superior_izquierda, columna-contColu_superior_izquierda, color):
+                                break                            
                         if not (listaCeldas.BuscarPosicionDiferente(fila-contFila_superior_izquierda, columna-contColu_superior_izquierda, color)): 
                             print("Auxiliar en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(fila-contFila_superior_izquierda)+" Columna: "+str(columna-contColu_superior_izquierda))
                             break
@@ -107,12 +99,11 @@ class ListaCeldas:
                     aux = self.Inicio
                     contFila_arriba = 2
                     while aux != None:
-                        if aux.ObtenerOrganismoVivo() == color:
-                            contFila_arriba += 1
-                            aux = self.Inicio
                         if listaCeldas.BuscarPosicionDiferente(fila+contFila_arriba, columna, color):
                             contFila_arriba += 1
-                            aux = self.Inicio                            
+                            aux = self.Inicio  
+                            if listaCeldas.BuscarPosicionIdentica(fila+contFila_arriba,columna, color):
+                                break                            
                         if not (listaCeldas.BuscarPosicionDiferente(fila+contFila_arriba, columna, color)): 
                             print("Auxiliar en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(fila+contFila_arriba)+" Columna: "+str(columna))
                             break
@@ -121,18 +112,48 @@ class ListaCeldas:
                 if listaCeldas.BuscarPosicionDiferente(fila-1, columna, color): 
                     aux = self.Inicio
                     contFila_abajo = 2
-                    while aux != None:
-                        if aux.ObtenerOrganismoVivo() == color:
+                    while aux != None: 
+                        if listaCeldas.BuscarPosicionDiferente(fila-contFila_abajo, columna, color):
                             contFila_abajo += 1
-                            aux = self.Inicio  
-                        if listaCeldas.BuscarPosicionDiferente(fila-contFila_abajo, columna, color) and listaCeldas.BuscarPosicionIdentica(fila-contFila_abajo, columna, color):
-                            contFila_abajo += 1
-                            aux = self.Inicio                            
+                            aux = self.Inicio
+                            if listaCeldas.BuscarPosicionIdentica(fila-contFila_abajo,columna, color):
+                                break                            
                         if not (listaCeldas.BuscarPosicionDiferente(fila-contFila_abajo, columna, color)): 
                             print("Auxiliar en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(fila-contFila_abajo)+" Columna: "+str(columna))
                             break
                         aux = aux.Siguiente
-            
+
+                #VALIDACIONES PARA HORIZONTALES 
+                # --> Derecha
+                if listaCeldas.BuscarPosicionDiferente(fila, columna+1, color): 
+                    aux = self.Inicio
+                    contColum_derecha = 2
+                    while aux != None:
+                        if listaCeldas.BuscarPosicionDiferente(fila, columna+contColum_derecha, color):
+                            contColum_derecha += 1
+                            aux = self.Inicio  
+                            if listaCeldas.BuscarPosicionIdentica(fila,columna+contColum_derecha,color):
+                                break                          
+                        if not (listaCeldas.BuscarPosicionDiferente(fila, columna+contColum_derecha, color)): 
+                            print("Auxiliar en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(fila)+" Columna: "+str(columna+contColum_derecha))
+                            break
+                        aux = aux.Siguiente
+                # --> Izquierda
+                if listaCeldas.BuscarPosicionDiferente(fila, columna-1, color): 
+                    aux = self.Inicio
+                    contColum_izquierda = 2
+                    while aux != None:
+                        if listaCeldas.BuscarPosicionDiferente(fila, columna-contColum_izquierda, color):
+                            contColum_izquierda += 1
+                            aux = self.Inicio       
+                            if listaCeldas.BuscarPosicionIdentica(fila,columna-contColum_izquierda,color):
+                                break                      
+                        if not (listaCeldas.BuscarPosicionDiferente(fila, columna-contColum_izquierda, color)): 
+                            print("Auxiliar en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(fila)+" Columna: "+str(columna-contColum_izquierda))
+                            break
+                        aux = aux.Siguiente
+
+            #para recorrer lista de organismo
             Auxiliar = Auxiliar.Siguiente
         return Retorno
         #debe retornar algo si o si 
@@ -163,7 +184,7 @@ class ListaCeldas:
     def BuscarPosicionIdentica(self, fila, columna, color):
         Auxiliar = self.Inicio
         while Auxiliar != None:
-            if Auxiliar.ObtenerColor() == color:   
+            if Auxiliar.ObtenerOrganismoVivo() == color:   
                 if (Auxiliar.ObtenerFila() == fila and Auxiliar.ObtenerColumna() == columna):
                     return True
             Auxiliar = Auxiliar.Siguiente

@@ -49,15 +49,15 @@ while True:
             print(Fore.LIGHTYELLOW_EX+"El organismo puede prosperar en las siguientes posiciones: ")
             numero_muestra = my_muestras.BuscarId(codig_muestra)
             if numero_muestra == 1:
-                print(Fore.LIGHTYELLOW_EX+celdas_1.BuscarOrganismo(codig_muestra, organis, celdas_1))
+                print(Fore.LIGHTYELLOW_EX+celdas_1.BuscarOrganismoPuedeProsperar(codig_muestra, organis, celdas_1))
             if numero_muestra == 2:
-                print(Fore.LIGHTYELLOW_EX+celdas_2.BuscarOrganismo(codig_muestra, organis, celdas_2))
+                print(Fore.LIGHTYELLOW_EX+celdas_2.BuscarOrganismoPuedeProsperar(codig_muestra, organis, celdas_2))
             if numero_muestra == 3:
-                print(Fore.LIGHTYELLOW_EX+celdas_3.BuscarOrganismo(codig_muestra, organis, celdas_3))
+                print(Fore.LIGHTYELLOW_EX+celdas_3.BuscarOrganismoPuedeProsperar(codig_muestra, organis, celdas_3))
             if numero_muestra == 4:
-                print(Fore.LIGHTYELLOW_EX+celdas_4.BuscarOrganismo(codig_muestra, organis, celdas_4))
+                print(Fore.LIGHTYELLOW_EX+celdas_4.BuscarOrganismoPuedeProsperar(codig_muestra, organis, celdas_4))
             if numero_muestra == 5:
-                print(Fore.LIGHTYELLOW_EX+celdas_5.BuscarOrganismo(codig_muestra, organis, celdas_5))
+                print(Fore.LIGHTYELLOW_EX+celdas_5.BuscarOrganismoPuedeProsperar(codig_muestra, organis, celdas_5))
             
             '''
             [1].  Ingrese el codigo de la muestra

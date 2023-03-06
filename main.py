@@ -1,6 +1,8 @@
 from TDA.ListaMuestra import ListaMuestra
 from TDA.ListaCeldasVivas import ListaCeldas
 from TDA.ListaOrganismos import ListaOrganismos
+from Dibujo import Dibujar
+
 from colorama import Fore
 from lectura import LecturaXML
 
@@ -46,20 +48,24 @@ while True:
             print(my_muestras.BuscarMuestra(codig_muestra))
             
             organis = input(Fore.CYAN+"\nIngrese el codigo del organismo que desea estudiar: ")
-            print(Fore.LIGHTYELLOW_EX+"El organismo puede prosperar en las siguientes posiciones: ")
+            print(Fore.LIGHTYELLOW_EX+"El organismo puede prosperar en las siguientes posiciones: \n")
             numero_muestra = my_muestras.BuscarId(codig_muestra) #Para saber que lista de la muestra usar 
             limite_vertical = my_muestras.LimiteVertical(codig_muestra) #Obtener limite vertical
             limite_horizontal = my_muestras.LimiteHorizontal(codig_muestra) #obtener limite horizontal
+
+            ##Pruebas 
+
             if numero_muestra == 1:
-                print(Fore.LIGHTYELLOW_EX+celdas_1.BuscarOrganismoPuedeProsperar(limite_vertical,limite_horizontal, organis, celdas_1))
+                ListaProstera1 = celdas_1.ObtenerOrganismoProspe(limite_vertical,limite_horizontal, organis, celdas_1)
+                Dibujar(celdas_1, ListaProstera1,limite_vertical, limite_horizontal)
             if numero_muestra == 2:
-                print(Fore.LIGHTYELLOW_EX+celdas_2.BuscarOrganismoPuedeProsperar(limite_vertical,limite_horizontal, organis, celdas_2))
+                ListaProstera2 = celdas_2.ObtenerOrganismoProspe(limite_vertical,limite_horizontal, organis, celdas_2)
             if numero_muestra == 3:
-                print(Fore.LIGHTYELLOW_EX+celdas_3.BuscarOrganismoPuedeProsperar(limite_vertical,limite_horizontal, organis, celdas_3))
+                ListaProstera3 = celdas_3.ObtenerOrganismoProspe(limite_vertical,limite_horizontal, organis, celdas_3)
             if numero_muestra == 4:
-                print(Fore.LIGHTYELLOW_EX+celdas_4.BuscarOrganismoPuedeProsperar(limite_vertical,limite_horizontal, organis, celdas_4))
+                ListaProstera4 = celdas_4.ObtenerOrganismoProspe(limite_vertical,limite_horizontal, organis, celdas_4)
             if numero_muestra == 5:
-                print(Fore.LIGHTYELLOW_EX+celdas_5.BuscarOrganismoPuedeProsperar(limite_vertical,limite_horizontal, organis, celdas_5))
+                ListaProstera5 = celdas_5.ObtenerOrganismoProspe(limite_vertical,limite_horizontal, organis, celdas_5)
             
             '''
             [1].  Ingrese el codigo de la muestra

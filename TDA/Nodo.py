@@ -75,3 +75,35 @@ class NodoOrganismo:
     
     def ObtenerColor(self):
         return self.Organismo.color
+
+class NodoDibujo:
+    def __init__(self, fila, columna, color, borde):
+        self.dibujo = DibujoCelda(fila, columna, color, borde)
+        self.Siguiente = None
+
+    def AsignarSiguiente(self, Nodo):
+        self.Siguiente = Nodo
+        
+    def ObtenerFila(self):
+        return self.dibujo.ObtenerFila()
+    
+    def ObtenerColumna(self):
+        return self.dibujo.ObtenerColumna()
+    
+    def ObtenerColor(self):
+        return self.dibujo.ObtenerColor()
+    
+    def ObtenerBorde(self):
+        return self.dibujo.ObtenerBorde()
+    
+    def SetFila(self, fila):
+        self.dibujo.SetFila(fila)
+    
+    def setColumna(self, columna):
+        self.dibujo.setColumna(columna)
+    
+    def setColor(self, color):
+        self.dibujo.setColor(color)
+
+    def setBorde(self, borde):
+        self.dibujo.setBorde(borde)

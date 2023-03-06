@@ -18,9 +18,9 @@ class ListaCeldas:
             self.Final.AsignarSiguiente(NuevoNodo)
             self.Final = NuevoNodo
     
-    def BuscarOrganismoPuedeProsperar(self, limiteVertical, limiteHorizontal, orga, listaCeldas):
+    def ObtenerOrganismoProspe(self, limiteVertical, limiteHorizontal, orga, listaCeldas):
+        ListaProspera = ListaCeldas()
         Auxiliar = self.Inicio
-        Retorno = "\n"
         while Auxiliar != None:
             if Auxiliar.ObtenerOrganismoVivo() == orga:
                 #datos de ficha a estudiar
@@ -45,7 +45,9 @@ class ListaCeldas:
                                 #SE excedio del tablero 
                                 break
                             else:
-                                print("Auxiliar en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(fila+contFila_inferior_derecha)+" Columna: "+str(columna+contColu_inferior_derecha))
+                                #ingresa la posicion donde prospera 
+                                ListaProspera.Insertar(fila+contFila_inferior_derecha,columna+contColu_inferior_derecha, orga, "Silver")
+                                print("Fila: "+str(fila+contFila_inferior_derecha)+" , Columna: "+str(columna+contColu_inferior_derecha))
                                 break
                         aux = aux.Siguiente
                 # --> Inferior Izquierda.
@@ -65,7 +67,8 @@ class ListaCeldas:
                             if(fila+contFila_inferior_izquierda < 0 or fila+contFila_inferior_izquierda > limiteVertical) and (columna-contColu_inferior_izquierda < 0 or columna-contColu_inferior_izquierda > limiteHorizontal): 
                                 break
                             else:
-                                print("Auxiliar en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(fila+contFila_inferior_izquierda)+" Columna: "+str(columna-contColu_inferior_izquierda))
+                                ListaProspera.Insertar(fila+contFila_inferior_izquierda,columna-contColu_inferior_izquierda,orga,"Silver")
+                                print("Fila: "+str(fila+contFila_inferior_izquierda)+" , Columna: "+str(columna-contColu_inferior_izquierda))
                                 break
                         aux = aux.Siguiente
                 # --> Superior Derecha
@@ -84,7 +87,8 @@ class ListaCeldas:
                             if(fila-contFila_superior_derecha < 0 or fila-contFila_superior_derecha > limiteVertical)and(columna+contColu_superior_derecha < 0 or columna+contColu_superior_derecha > limiteHorizontal):
                                 break
                             else:
-                                print("Auxiliar en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(fila-contFila_superior_derecha)+" Columna: "+str(columna+contColu_superior_derecha))
+                                ListaProspera.Insertar(fila-contFila_superior_derecha, columna+contColu_superior_derecha, orga, "Silver")
+                                print("Fila: "+str(fila-contFila_superior_derecha)+" , Columna: "+str(columna+contColu_superior_derecha))
                                 break
                         aux = aux.Siguiente
                 # --> Superior Izquierda
@@ -103,7 +107,8 @@ class ListaCeldas:
                             if(fila-contFila_superior_izquierda < 0 or fila-contFila_superior_izquierda > limiteVertical)and(columna-contColu_superior_izquierda < 0 or columna-contColu_superior_izquierda > limiteHorizontal):
                                 break
                             else:
-                                print("Auxiliar en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(fila-contFila_superior_izquierda)+" Columna: "+str(columna-contColu_superior_izquierda))
+                                ListaProspera.Insertar(fila-contFila_superior_izquierda, columna-contColu_superior_izquierda, orga, "Silver")
+                                print("Fila: "+str(fila-contFila_superior_izquierda)+" , Columna: "+str(columna-contColu_superior_izquierda))
                                 break
                         aux = aux.Siguiente
                 
@@ -122,7 +127,8 @@ class ListaCeldas:
                             if(fila+contFila_arriba < 0 or fila+contFila_arriba > limiteVertical):
                                 break
                             else:
-                                print("Auxiliar en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(fila+contFila_arriba)+" Columna: "+str(columna))
+                                ListaProspera.Insertar(fila+contFila_arriba,columna,orga,"Silver")
+                                print("Fila: "+str(fila+contFila_arriba)+" , Columna: "+str(columna))
                                 break
                         aux = aux.Siguiente
                 # --> Abajo
@@ -139,7 +145,8 @@ class ListaCeldas:
                             if(fila-contFila_abajo < 0 or fila-contFila_abajo > limiteVertical):
                                 break
                             else:
-                                print("Auxiliar en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(fila-contFila_abajo)+" Columna: "+str(columna))
+                                ListaProspera.Insertar(fila-contFila_abajo,columna,orga,"Silver")
+                                print("Fila: "+str(fila-contFila_abajo)+" , Columna: "+str(columna))
                                 break
                         aux = aux.Siguiente
 
@@ -158,7 +165,8 @@ class ListaCeldas:
                             if(columna+contColum_derecha < 0 or columna+contColum_derecha > limiteHorizontal):
                                 break
                             else:
-                                print("Auxiliar en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(fila)+" Columna: "+str(columna+contColum_derecha))
+                                ListaProspera.Insertar(fila,columna+contColum_derecha, orga, "Silver")
+                                print("Fila: "+str(fila)+" , Columna: "+str(columna+contColum_derecha))
                                 break
                         aux = aux.Siguiente
                 # --> Izquierda
@@ -175,13 +183,14 @@ class ListaCeldas:
                             if(columna-contColum_izquierda < 0 or columna-contColum_izquierda > limiteHorizontal):
                                 break
                             else:
-                                print("Auxiliar en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(fila)+" Columna: "+str(columna-contColum_izquierda))
+                                ListaProspera.Insertar(fila, columna-contColum_izquierda, orga, "Silver")
+                                print("Fila: "+str(fila)+" , Columna: "+str(columna-contColum_izquierda))
                                 break
                         aux = aux.Siguiente
 
             #para recorrer lista de organismo
             Auxiliar = Auxiliar.Siguiente
-        return Retorno 
+        return ListaProspera
 
     def BuscarPosicionDiferente(self, fila, columna, color):
         Auxiliar = self.Inicio
@@ -192,19 +201,12 @@ class ListaCeldas:
             Auxiliar = Auxiliar.Siguiente
         return False
 
-    #NO es util aun 
-    def VerifivarVacio(self, fila, columna):
+    def Imiprimir(self):
         Auxiliar = self.Inicio
-        bandera = False
         while Auxiliar != None:
-            if (Auxiliar.ObtenerFila() == fila and Auxiliar.ObtenerColumna() == columna):
-                bandera = True
+            print("Fila: " + str(Auxiliar.ObtenerFila()))
+            print("Columna: "+ str(Auxiliar.ObtenerColumna()))
             Auxiliar = Auxiliar.Siguiente
-
-        if bandera == False: #En toda la lista no hay posiciones en esas coordenadas 
-            return True
-        else:
-            return False    #si existe posicion 
 
     def BuscarPosicionIdentica(self, fila, columna, color):
         Auxiliar = self.Inicio
@@ -214,8 +216,28 @@ class ListaCeldas:
                     return True
             Auxiliar = Auxiliar.Siguiente
         return False
+    
+    def BuscarPosicion(self, Fila, Columna):
+        Auxiliar = self.Inicio
+        while Auxiliar != None:
+            #print("Fila: "+str(Fila+1) + " Columna: "+str(Columna+1))
+            #print(Auxiliar.ObtenerFila(), Auxiliar.ObtenerColumna())
+            if (Auxiliar.ObtenerFila() == Fila and Auxiliar.ObtenerColumna() == Columna):
+                return True
+            Auxiliar = Auxiliar.Siguiente
+        return False
+    
+    def BuscarColor(self, Fila, Columna):
+        Auxiliar = self.Inicio
+        while Auxiliar != None:
+            #print("Fila: "+str(Fila+1) + " Columna: "+str(Columna+1))
+            #print(Auxiliar.ObtenerFila(), Auxiliar.ObtenerColumna())
+            if (Auxiliar.ObtenerFila() == Fila and Auxiliar.ObtenerColumna() == Columna):
+                return Auxiliar.ObtenerColor()
+            Auxiliar = Auxiliar.Siguiente
 
-    def pendienteDEusar(self, muestra, orga, listaCeldas):
+    #Sin el intento de validar el tablero 
+    def BuscarOrganismoPuedeProsperar(self, muestra, orga, listaCeldas):
         Auxiliar = self.Inicio
         Retorno = "\n"
         while Auxiliar != None:

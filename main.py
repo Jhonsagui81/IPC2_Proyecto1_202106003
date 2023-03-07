@@ -1,6 +1,8 @@
 from TDA.ListaMuestra import ListaMuestra
 from TDA.ListaCeldasVivas import ListaCeldas
 from TDA.ListaOrganismos import ListaOrganismos
+from Dibujo import Dibujar
+
 from colorama import Fore
 from lectura import LecturaXML
 
@@ -46,18 +48,133 @@ while True:
             print(my_muestras.BuscarMuestra(codig_muestra))
             
             organis = input(Fore.CYAN+"\nIngrese el codigo del organismo que desea estudiar: ")
-            print(Fore.LIGHTYELLOW_EX+"El organismo puede prosperar en las siguientes posiciones: ")
-            numero_muestra = my_muestras.BuscarId(codig_muestra)
+            print(Fore.LIGHTYELLOW_EX+"El organismo puede prosperar en las siguientes posiciones: \n")
+            color_organis = celdas_1.BuscarColorCodigo(organis) #para tener el color asignado al organismo que estudia
+            numero_muestra = my_muestras.BuscarId(codig_muestra) #Para saber que lista de la muestra usar 
+            limite_vertical = my_muestras.LimiteVertical(codig_muestra) #Obtener limite vertical
+            limite_horizontal = my_muestras.LimiteHorizontal(codig_muestra) #obtener limite horizontal
+
+            ##Pruebas 
+
             if numero_muestra == 1:
-                print(Fore.LIGHTYELLOW_EX+celdas_1.BuscarOrganismoPuedeProsperar(codig_muestra, organis, celdas_1))
+                ListaProstera1 = celdas_1.ObtenerOrganismoProspe(limite_vertical,limite_horizontal, organis, celdas_1)
+                # Dibujar(celdas_1, ListaProstera1,limite_vertical, limite_horizontal) ##para intentar dibujar 
+                while True:
+                    print(Fore.LIGHTYELLOW_EX + '\n----------------------------------------------------')
+                    print(Fore.LIGHTYELLOW_EX + '|            ¿Desea agregar un organismo?          |')
+                    print(Fore.LIGHTYELLOW_EX + '|    [1]. Si                                       |')
+                    print(Fore.LIGHTYELLOW_EX + '|    [0]. No                                       |')
+                    print(Fore.LIGHTYELLOW_EX + '----------------------------------------------------')
+                    sub_menu_2_str = input(Fore.LIGHTYELLOW_EX +"Ingrese un valor para seleccionar una opcion: ") ##pedir opcion 
+                    sub_menu_2 = int(sub_menu_2_str)
+                    if sub_menu_2 == 1:
+                        fila_m1 = int(input("Ingrese la fila: "))
+                        columna_m1 = int(input("Ingrese la columna: "))
+                        #Validar que la posicion este libre
+                        bandera = celdas_1.CeldaEstaVacia(fila_m1, columna_m1)
+                        if bandera == True: #ya existe en coordenada
+                            print(Fore.RED +"En esta celda ya existe un organismo")
+                        else: #No existe, entonces agrega la posicion
+                            # celdas_1.Insertar(fila_m1,columna_m1,organis,color_organis)
+                            celdas_1.AgregarOrganismoMuestra(limite_vertical, limite_horizontal, fila_m1,columna_m1,organis,color_organis,celdas_1, ListaProstera1)
+                    if sub_menu_2 == 0:
+                        print(Fore.LIGHTYELLOW_EX +"Salida del xml con la muestra nueva y termina ciclo ")
+                        break
             if numero_muestra == 2:
-                print(Fore.LIGHTYELLOW_EX+celdas_2.BuscarOrganismoPuedeProsperar(codig_muestra, organis, celdas_2))
+                ListaProstera2 = celdas_2.ObtenerOrganismoProspe(limite_vertical,limite_horizontal, organis, celdas_2)
+
+                while True:
+                    print(Fore.LIGHTYELLOW_EX + '\n----------------------------------------------------')
+                    print(Fore.LIGHTYELLOW_EX + '|            ¿Desea agregar un organismo?          |')
+                    print(Fore.LIGHTYELLOW_EX + '|    [1]. Si                                       |')
+                    print(Fore.LIGHTYELLOW_EX + '|    [0]. No                                       |')
+                    print(Fore.LIGHTYELLOW_EX + '----------------------------------------------------')
+                    sub_menu_3_str = input(Fore.LIGHTYELLOW_EX +"Ingrese un valor para seleccionar una opcion: ") ##pedir opcion 
+                    sub_menu_3 = int(sub_menu_3_str)
+                    if sub_menu_3 == 1:
+                        fila_m2 = int(input("Ingrese la fila: "))
+                        columna_m2 = int(input("Ingrese la columna: "))
+                        #Validar que la posicion este libre
+                        bandera_2 = celdas_2.CeldaEstaVacia(fila_m2, columna_m2)
+                        if bandera_2 == True: #ya existe en coordenada
+                            print(Fore.RED +"En esta celda ya existe un organismo")
+                        else: #No existe, entonces agrega la posicion
+                            # celdas_1.Insertar(fila_m1,columna_m1,organis,color_organis)
+                            celdas_2.AgregarOrganismoMuestra(limite_vertical, limite_horizontal, fila_m2,columna_m2,organis,color_organis,celdas_2, ListaProstera2)
+                    if sub_menu_3 == 0:
+                        print(Fore.LIGHTYELLOW_EX +"Salida del xml con la muestra nueva y termina ciclo ")
+                        break
             if numero_muestra == 3:
-                print(Fore.LIGHTYELLOW_EX+celdas_3.BuscarOrganismoPuedeProsperar(codig_muestra, organis, celdas_3))
+                ListaProstera3 = celdas_3.ObtenerOrganismoProspe(limite_vertical,limite_horizontal, organis, celdas_3)
+
+                while True:
+                    print(Fore.LIGHTYELLOW_EX + '\n----------------------------------------------------')
+                    print(Fore.LIGHTYELLOW_EX + '|            ¿Desea agregar un organismo?          |')
+                    print(Fore.LIGHTYELLOW_EX + '|    [1]. Si                                       |')
+                    print(Fore.LIGHTYELLOW_EX + '|    [0]. No                                       |')
+                    print(Fore.LIGHTYELLOW_EX + '----------------------------------------------------')
+                    sub_menu_4_str = input(Fore.LIGHTYELLOW_EX +"Ingrese un valor para seleccionar una opcion: ") ##pedir opcion 
+                    sub_menu_4 = int(sub_menu_4_str)
+                    if sub_menu_4 == 1:
+                        fila_m3 = int(input("Ingrese la fila: "))
+                        columna_m3 = int(input("Ingrese la columna: "))
+                        #Validar que la posicion este libre
+                        bandera3 = celdas_3.CeldaEstaVacia(fila_m3, columna_m3)
+                        if bandera3 == True: #ya existe en coordenada
+                            print(Fore.RED +"En esta celda ya existe un organismo")
+                        else: #No existe, entonces agrega la posicion
+                            # celdas_1.Insertar(fila_m1,columna_m1,organis,color_organis)
+                            celdas_3.AgregarOrganismoMuestra(limite_vertical, limite_horizontal, fila_m3,columna_m3,organis,color_organis,celdas_3, ListaProstera3)
+                    if sub_menu_4 == 0:
+                        print(Fore.LIGHTYELLOW_EX +"Salida del xml con la muestra nueva y termina ciclo ")
+                        break
             if numero_muestra == 4:
-                print(Fore.LIGHTYELLOW_EX+celdas_4.BuscarOrganismoPuedeProsperar(codig_muestra, organis, celdas_4))
+                ListaProstera4 = celdas_4.ObtenerOrganismoProspe(limite_vertical,limite_horizontal, organis, celdas_4)
+
+                while True:
+                    print(Fore.LIGHTYELLOW_EX + '\n----------------------------------------------------')
+                    print(Fore.LIGHTYELLOW_EX + '|            ¿Desea agregar un organismo?          |')
+                    print(Fore.LIGHTYELLOW_EX + '|    [1]. Si                                       |')
+                    print(Fore.LIGHTYELLOW_EX + '|    [0]. No                                       |')
+                    print(Fore.LIGHTYELLOW_EX + '----------------------------------------------------')
+                    sub_menu_5_str = input(Fore.LIGHTYELLOW_EX +"Ingrese un valor para seleccionar una opcion: ") ##pedir opcion 
+                    sub_menu_5 = int(sub_menu_5_str)
+                    if sub_menu_5 == 1:
+                        fila_m5 = int(input("Ingrese la fila: "))
+                        columna_m5 = int(input("Ingrese la columna: "))
+                        #Validar que la posicion este libre
+                        bandera4 = celdas_4.CeldaEstaVacia(fila_m5, columna_m5)
+                        if bandera4 == True: #ya existe en coordenada
+                            print(Fore.RED +"En esta celda ya existe un organismo")
+                        else: #No existe, entonces agrega la posicion
+                            # celdas_1.Insertar(fila_m1,columna_m1,organis,color_organis)
+                            celdas_4.AgregarOrganismoMuestra(limite_vertical, limite_horizontal, fila_m5,columna_m5,organis,color_organis,celdas_4, ListaProstera4)
+                    if sub_menu_5 == 0:
+                        print(Fore.LIGHTYELLOW_EX +"Salida del xml con la muestra nueva y termina ciclo ")
+                        break
             if numero_muestra == 5:
-                print(Fore.LIGHTYELLOW_EX+celdas_5.BuscarOrganismoPuedeProsperar(codig_muestra, organis, celdas_5))
+                ListaProstera5 = celdas_5.ObtenerOrganismoProspe(limite_vertical,limite_horizontal, organis, celdas_5)
+                while True:
+                    print(Fore.LIGHTYELLOW_EX + '\n----------------------------------------------------')
+                    print(Fore.LIGHTYELLOW_EX + '|            ¿Desea agregar un organismo?          |')
+                    print(Fore.LIGHTYELLOW_EX + '|    [1]. Si                                       |')
+                    print(Fore.LIGHTYELLOW_EX + '|    [0]. No                                       |')
+                    print(Fore.LIGHTYELLOW_EX + '----------------------------------------------------')
+                    sub_menu_6_str = input(Fore.LIGHTYELLOW_EX +"Ingrese un valor para seleccionar una opcion: ") ##pedir opcion 
+                    sub_menu_6 = int(sub_menu_6_str)
+                    if sub_menu_6 == 1:
+                        fila_m6 = int(input("Ingrese la fila: "))
+                        columna_m6 = int(input("Ingrese la columna: "))
+                        #Validar que la posicion este libre
+                        bandera6 = celdas_5.CeldaEstaVacia(fila_m6, columna_m6)
+                        if bandera6 == True: #ya existe en coordenada
+                            print(Fore.RED +"En esta celda ya existe un organismo")
+                        else: #No existe, entonces agrega la posicion
+                            # celdas_1.Insertar(fila_m1,columna_m1,organis,color_organis)
+                            celdas_5.AgregarOrganismoMuestra(limite_vertical, limite_horizontal, fila_m6,columna_m6,organis,color_organis,celdas_5, ListaProstera5)
+                    if sub_menu_6 == 0:
+                        print(Fore.LIGHTYELLOW_EX +"Salida del xml con la muestra nueva y termina ciclo ")
+                        break
             
             '''
             [1].  Ingrese el codigo de la muestra

@@ -8,21 +8,21 @@ class ListaOrganismos:
 
     def Insertar(self, codigo, nombre):
         if self.limite == 1:
-            color = "Red"
+            color = 'Red'
         if self.limite == 2:
-            color = "Black"
+            color = 'Navy'
         if self.limite == 3:
-            color = "Green"
+            color = 'Lime'
         if self.limite == 4:
-            color = "teal"
+            color = 'Aqua'
         if self.limite == 5:
-            color = "Purple"                            
+            color = 'Purple'                            
         if self.limite == 6:
-            self.color = "gray"
+            self.color = 'Brown'
         if self.limite == 7:
-            self.color = "yellow"   
+            self.color = 'yellow'   
         if self.limite == 8:
-            self.color = "Orange"                             
+            self.color = 'Orange'                             
 
         NuevoNodo = NodoOrganismo(codigo, nombre, color)
         if self.Inicio == None:

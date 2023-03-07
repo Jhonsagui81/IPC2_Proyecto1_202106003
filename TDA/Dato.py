@@ -7,14 +7,30 @@ class DatoMuestra:
         self.limite_vert = limite_vertical
         self.limite_hori = limite_horizontal
         self.celda_viva = celda_viva
-    
-    
 
 class DatoCelda:
     def __init__(self, fila, columna, codigo_organismo,color):
         self.fila = fila
         self.columna = columna
         self.codigo_organismo = codigo_organismo
+        self.color = color
+    #get
+    def ObtenerFila(self):
+        return self.fila
+    def ObtenerColumna(self):
+        return self.columna
+    def ObtenerCodigo(self):
+        return self.codigo_organismo
+    def ObtenerColor(self):
+        return self.color
+    #set
+    def SetFila(self, fila):
+        self.fila = fila
+    def setColumna(self, columna):
+        self.columna = columna
+    def setCodigo(self, codigo):
+        self.codigo_organismo = codigo
+    def setColor(self, color):
         self.color = color
 
 class Organismo:
@@ -24,12 +40,6 @@ class Organismo:
         self.color = color
 
 class DibujoCelda:
-    def __init__(self, fila, columna, color, borde):
-        self.fila = fila
-        self.columna = columna
-        self.color = color
-        self.borde = borde
-    
     def __init__(self, Columna, Fila, Color, Borde):
         self.Columna = Columna
         self.Fila = Fila
@@ -48,7 +58,7 @@ class DibujoCelda:
     def ObtenerBorde(self):
         return self.Borde
     
-    def SetFila(self, fila):
+    def setFila(self, fila):
         self.Fila = fila
     
     def setColumna(self, columna):

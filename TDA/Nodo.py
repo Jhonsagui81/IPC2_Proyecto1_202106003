@@ -13,17 +13,28 @@ class NodoCeldas:
         self.Siguiente = Nodo
     
     def ObtenerFila(self):
-        return self.CeldaViva.fila
+        return self.CeldaViva.ObtenerFila()
     
     def ObtenerColumna(self):
-        return self.CeldaViva.columna
+        return self.CeldaViva.ObtenerColumna()
     
     def ObtenerOrganismoVivo(self):
-        return self.CeldaViva.codigo_organismo
+        return self.CeldaViva.ObtenerCodigo()
     
     def ObtenerColor(self):
-        return self.CeldaViva.color
+        return self.CeldaViva.ObtenerColor()
     
+    def setFila(self, fila):
+        self.CeldaViva.SetFila(fila)
+    
+    def setColumna(self, columna):
+        self.CeldaViva.setColumna(columna)
+    
+    def setCodigo(self, codigo):
+        self.CeldaViva.setCodigo(codigo)
+        
+    def setColor(self, color):
+        self.CeldaViva.setColor(color)
 
 class NodoMuestra: 
 
@@ -83,7 +94,7 @@ class NodoDibujo:
 
     def AsignarSiguiente(self, Nodo):
         self.Siguiente = Nodo
-        
+
     def ObtenerFila(self):
         return self.dibujo.ObtenerFila()
     
@@ -96,8 +107,8 @@ class NodoDibujo:
     def ObtenerBorde(self):
         return self.dibujo.ObtenerBorde()
     
-    def SetFila(self, fila):
-        self.dibujo.SetFila(fila)
+    def setFila(self, fila):
+        self.dibujo.setFila(fila)
     
     def setColumna(self, columna):
         self.dibujo.setColumna(columna)

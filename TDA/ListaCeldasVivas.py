@@ -283,13 +283,12 @@ class ListaCeldas:
                         contColu_inferior_derecha += 1
                         aux = self.Inicio  
                         #La siguiente posicion es hermano por tanto ya no puede comer 
-                        if listaCeldas.BuscarPosicionIdentica(fila+contFila_inferior_derecha, columna+contColu_inferior_derecha, codigo):
-                            for i1 in range(1,contColu_inferior_derecha):
-                                print("FIla: "+str(fila+(i1 ))+"  ,  Columna: "+str(columna+(i1 )))
-                                listaCeldas.BuscarPosicionDiferenteParaPintar(fila+(i1 ), columna+(i1 ), codigo,color)
-                            break
+                    if listaCeldas.BuscarPosicionIdentica(fila+contFila_inferior_derecha, columna+contColu_inferior_derecha, codigo):
+                        for i1 in range(1,contColu_inferior_derecha):
+                            print("FIla: "+str(fila+(i1 ))+"  ,  Columna: "+str(columna+(i1 )))
+                            listaCeldas.BuscarPosicionDiferenteParaPintar(fila+(i1 ), columna+(i1 ), codigo,color)
+                        break
                     aux = aux.Siguiente
-            
             # --> Inferior Izquierda.
             if listaCeldas.BuscarPosicionDiferente(fila+1, columna-1, codigo): 
                 aux = self.Inicio
@@ -300,11 +299,11 @@ class ListaCeldas:
                         contFila_inferior_izquierda += 1
                         contColu_inferior_izquierda += 1
                         aux = self.Inicio  
-                        if listaCeldas.BuscarPosicionIdentica(fila+contFila_inferior_izquierda, columna-contColu_inferior_izquierda, codigo):
-                            for i2 in range(1,contColu_inferior_izquierda):
-                                print("FIla: "+str(fila+(i2 ))+"  ,  Columna: "+str(columna-(i2 )))
-                                listaCeldas.BuscarPosicionDiferenteParaPintar(fila+(i2 ), columna-(i2 ), codigo,color)
-                            break                           
+                    if listaCeldas.BuscarPosicionIdentica(fila+contFila_inferior_izquierda, columna-contColu_inferior_izquierda, codigo):
+                        for i2 in range(1,contColu_inferior_izquierda):
+                            print("FIla: "+str(fila+(i2 ))+"  ,  Columna: "+str(columna-(i2 )))
+                            listaCeldas.BuscarPosicionDiferenteParaPintar(fila+(i2 ), columna-(i2 ), codigo,color)
+                        break                           
                     aux = aux.Siguiente
             # --> Superior Derecha
             if listaCeldas.BuscarPosicionDiferente(fila-1, columna+1, codigo): 
@@ -316,11 +315,11 @@ class ListaCeldas:
                         contFila_superior_derecha += 1
                         contColu_superior_derecha += 1
                         aux = self.Inicio 
-                        if listaCeldas.BuscarPosicionIdentica(fila-contFila_superior_derecha, columna+contColu_superior_derecha, codigo):
-                            for i3 in range(1,contColu_superior_derecha):
-                                print("FIla: "+str(fila-(i3 ))+"  ,  Columna: "+str(columna+(i3 )))
-                                listaCeldas.BuscarPosicionDiferenteParaPintar(fila-(i3 ), columna+(i3 ), codigo,color)
-                            break                            
+                    if listaCeldas.BuscarPosicionIdentica(fila-contFila_superior_derecha, columna+contColu_superior_derecha, codigo):
+                        for i3 in range(1,contColu_superior_derecha):
+                            print("FIla: "+str(fila-(i3 ))+"  ,  Columna: "+str(columna+(i3 )))
+                            listaCeldas.BuscarPosicionDiferenteParaPintar(fila-(i3 ), columna+(i3 ), codigo,color)
+                        break                            
                     aux = aux.Siguiente
             # --> Superior Izquierda
             if listaCeldas.BuscarPosicionDiferente(fila-1, columna-1, codigo): 
@@ -332,11 +331,11 @@ class ListaCeldas:
                         contFila_superior_izquierda += 1
                         contColu_superior_izquierda += 1
                         aux = self.Inicio
-                        if listaCeldas.BuscarPosicionIdentica(fila-contFila_superior_izquierda, columna-contColu_superior_izquierda, codigo):
-                            for i4 in range(1,contColu_superior_izquierda):
-                                print("FIla: "+str(fila-(i4 ))+"  ,  Columna: "+str(columna-(i4 )))
-                                listaCeldas.BuscarPosicionDiferenteParaPintar(fila-(i4 ), columna-(i4 ), codigo,color)
-                            break                            
+                    if listaCeldas.BuscarPosicionIdentica(fila-contFila_superior_izquierda, columna-contColu_superior_izquierda, codigo):
+                        for i4 in range(1,contColu_superior_izquierda):
+                            print("FIla: "+str(fila-(i4 ))+"  ,  Columna: "+str(columna-(i4 )))
+                            listaCeldas.BuscarPosicionDiferenteParaPintar(fila-(i4 ), columna-(i4 ), codigo,color)
+                        break                            
                     aux = aux.Siguiente
 
             #VALIDACIONES PARA VERTICALES 
@@ -348,11 +347,11 @@ class ListaCeldas:
                     if listaCeldas.BuscarPosicionDiferente(fila+contFila_arriba, columna, codigo):
                         contFila_arriba += 1
                         aux = self.Inicio  
-                        if listaCeldas.BuscarPosicionIdentica(fila+contFila_arriba,columna, codigo):
-                            for i5 in range(1,contFila_arriba):
-                                print("FIla: "+str(fila+(i5 ))+"  ,  Columna: "+str(columna))
-                                listaCeldas.BuscarPosicionDiferenteParaPintar(fila+(i5 ), columna, codigo,color)
-                            break                            
+                    if listaCeldas.BuscarPosicionIdentica(fila+contFila_arriba,columna, codigo):
+                        for i5 in range(1,contFila_arriba):
+                            print("FIla: "+str(fila+(i5 ))+"  ,  Columna: "+str(columna))
+                            listaCeldas.BuscarPosicionDiferenteParaPintar(fila+(i5 ), columna, codigo,color)
+                        break                            
                     aux = aux.Siguiente
             # --> Abajo
             if listaCeldas.BuscarPosicionDiferente(fila-1, columna, codigo): 
@@ -362,11 +361,11 @@ class ListaCeldas:
                     if listaCeldas.BuscarPosicionDiferente(fila-contFila_abajo, columna, codigo):
                         contFila_abajo += 1
                         aux = self.Inicio
-                        if listaCeldas.BuscarPosicionIdentica(fila-contFila_abajo,columna, codigo):
-                            for i6 in range(1,contFila_abajo):
-                                print("FIla: "+str(fila+(i6 ))+"  ,  Columna: "+str(columna))
-                                listaCeldas.BuscarPosicionDiferenteParaPintar(fila+(i6 ), columna, codigo,color)
-                            break                             
+                    if listaCeldas.BuscarPosicionIdentica(fila-contFila_abajo,columna, codigo):
+                        for i6 in range(1,contFila_abajo):
+                            print("FIla: "+str(fila-(i6 ))+"  ,  Columna: "+str(columna))
+                            listaCeldas.BuscarPosicionDiferenteParaPintar(fila-(i6 ), columna, codigo,color)
+                        break                             
                     aux = aux.Siguiente
             #VALIDACIONES PARA HORIZONTALES 
             # --> Derecha
@@ -377,11 +376,11 @@ class ListaCeldas:
                     if listaCeldas.BuscarPosicionDiferente(fila, columna+contColum_derecha, codigo):
                         contColum_derecha += 1
                         aux = self.Inicio  
-                        if listaCeldas.BuscarPosicionIdentica(fila,columna+contColum_derecha,codigo):
-                            for i7 in range(1,contColum_derecha):
-                                print("FIla: "+str(fila)+"  ,  Columna: "+str(columna+(i7 )))
-                                listaCeldas.BuscarPosicionDiferenteParaPintar(fila, columna+(i7 ), codigo,color)
-                            break                          
+                    if listaCeldas.BuscarPosicionIdentica(fila,columna+contColum_derecha,codigo):
+                        for i7 in range(1,contColum_derecha):
+                            print("FIla: "+str(fila)+"  ,  Columna: "+str(columna+(i7 )))
+                            listaCeldas.BuscarPosicionDiferenteParaPintar(fila, columna+(i7 ), codigo,color)
+                        break                          
                     aux = aux.Siguiente
             # --> Izquierda
             if listaCeldas.BuscarPosicionDiferente(fila, columna-1, codigo): 
@@ -391,11 +390,11 @@ class ListaCeldas:
                     if listaCeldas.BuscarPosicionDiferente(fila, columna-contColum_izquierda, codigo):
                         contColum_izquierda += 1
                         aux = self.Inicio       
-                        if listaCeldas.BuscarPosicionIdentica(fila,columna-contColum_izquierda,codigo):
-                            for i8 in range(1,contColum_izquierda):
-                                print("FIla: "+str(fila)+"  ,  Columna: "+str(columna-(i8 )))
-                                listaCeldas.BuscarPosicionDiferenteParaPintar(fila, columna-(i8 ), codigo,color)
-                            break                       
+                    if listaCeldas.BuscarPosicionIdentica(fila,columna-contColum_izquierda,codigo):
+                        for i8 in range(1,contColum_izquierda):
+                            print("FIla: "+str(fila)+"  ,  Columna: "+str(columna-(i8 )))
+                            listaCeldas.BuscarPosicionDiferenteParaPintar(fila, columna-(i8 ), codigo,color)
+                        break                       
                     aux = aux.Siguiente
         #En caso no este fila y columna en lista de posible comida
             listaCeldas.Insertar(fila, columna, codigo, color)

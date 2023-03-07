@@ -99,7 +99,7 @@ class ListaDibujo:
         texto += "\t\t>];\n"
         texto += "}\n"
 
-        Destino = open('/home/jhonatan/Documentos/Universidad_USAC/Semestre5/02_IPC2/clone/IPC2_Proyecto1_202106003/Dibujo.dot', 'w')
+        Destino = open('/home/jhonatan/Documentos/Universidad_USAC/Semestre5/02_IPC2/clone/App/Documentacion/Dibujo.dot', 'w')
         Destino.write(texto)
         Destino.close()
                 

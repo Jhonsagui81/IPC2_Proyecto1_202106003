@@ -1,10 +1,11 @@
 from TDA.ListaMuestra import ListaMuestra
 from TDA.ListaCeldasVivas import ListaCeldas
 from TDA.ListaOrganismos import ListaOrganismos
-from Dibujo import Dibujar
+from Componentes.Dibujo import Dibujar
+from Componentes.lectura import LecturaXML
 
 from colorama import Fore
-from lectura import LecturaXML
+
 
 my_muestras = ListaMuestra()
 celdas_1 = ListaCeldas()
@@ -58,7 +59,7 @@ while True:
 
             if numero_muestra == 1:
                 ListaProstera1 = celdas_1.ObtenerOrganismoProspe(limite_vertical,limite_horizontal, organis, celdas_1)
-                # Dibujar(celdas_1, ListaProstera1,limite_vertical, limite_horizontal) ##para intentar dibujar 
+                Dibujar(celdas_1, ListaProstera1,limite_vertical, limite_horizontal) ##para intentar dibujar 
                 while True:
                     print(Fore.LIGHTYELLOW_EX + '\n----------------------------------------------------')
                     print(Fore.LIGHTYELLOW_EX + '|            ¿Desea agregar un organismo?          |')

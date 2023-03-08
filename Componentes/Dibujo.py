@@ -61,3 +61,39 @@ def Dibujar(celdas_1, celdas_prosperan, limite_vertical, limite_horizontal):
     ListaElementosDibujar.GenerarDibujo()
     cmd_str = "dot -Tsvg -O ./Documentacion/Dibujo.dot"
     subprocess.run(cmd_str, shell=True)
+
+def DibujarModificacion(celdas_1, limite_vertical, limite_horizontal):
+    ListaElementosDibujar2 = ListaDibujo(limite_vertical, limite_horizontal)
+    
+    for rows in range(limite_vertical):
+        for cols in range(limite_horizontal):
+            # Verificar si en esta posicion hay celdas
+            if celdas_1.BuscarPosicion(rows,cols):
+                if cols-1 >= 0 and rows-1 >= 0:
+                    ListaElementosDibujar2.Insertar(rows-1, cols-1, 'White', 'Black')
+                if rows-1 >= 0:
+                    ListaElementosDibujar2.Insertar(rows-1, cols, 'White', 'Black')
+                if rows-1 >= 0 and cols+1 < limite_horizontal:
+                    ListaElementosDibujar2.Insertar(rows-1, cols+1, 'White', 'Black')
+                if cols-1 > 0:
+                    ListaElementosDibujar2.Insertar(rows, cols-1, 'White', 'Black')
+
+                #Quiero graficar la celdaOrganismo
+                colorR = celdas_1.BuscarColor(rows,cols)
+                ListaElementosDibujar2.Insertar(rows, cols, colorR, 'Green')
+                if cols+1 < limite_horizontal:
+                    ListaElementosDibujar2.Insertar(rows, cols+1, 'White', 'Black')
+                if rows+1 < limite_vertical and cols-1 >= 0:
+                    ListaElementosDibujar2.Insertar(rows+1, cols-1, 'White', 'Black')
+                if rows+1 < limite_vertical:
+                    ListaElementosDibujar2.Insertar(rows + 1, cols, 'White', 'Black')
+                if rows+1 < limite_vertical and cols+1 < limite_horizontal:
+                    ListaElementosDibujar2.Insertar(rows+1, cols+1, 'White', 'Black')
+            else:
+                ListaElementosDibujar2.Insertar(rows, cols, 'White', 'Black')
+
+
+
+    ListaElementosDibujar2.GenerarDibujo()
+    cmd_str = "dot -Tsvg -O ./Documentacion/Dibujo.dot"
+    subprocess.run(cmd_str, shell=True)

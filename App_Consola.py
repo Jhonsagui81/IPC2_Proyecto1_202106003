@@ -1,7 +1,7 @@
 from TDA.ListaMuestra import ListaMuestra
 from TDA.ListaCeldasVivas import ListaCeldas
 from TDA.ListaOrganismos import ListaOrganismos
-from Componentes.Dibujo import Dibujar
+from Componentes.Dibujo import *
 from Componentes.lectura import LecturaXML
 
 from colorama import Fore
@@ -78,6 +78,7 @@ while True:
                             else: #No existe, entonces agrega la posicion
                                 # celdas_1.Insertar(fila_m1,columna_m1,organis,color_organis)
                                 celdas_1.AgregarOrganismoMuestra(limite_vertical, limite_horizontal, fila_m1,columna_m1,organis,color_organis,celdas_1, ListaProstera1)
+                                DibujarModificacion(celdas_1,limite_vertical, limite_horizontal)
                         if sub_menu_2 == 0:
                             print(Fore.LIGHTYELLOW_EX +"Salida del xml con la muestra nueva y termina ciclo ")
                             break
@@ -102,6 +103,7 @@ while True:
                             else: #No existe, entonces agrega la posicion
                                 # celdas_1.Insertar(fila_m1,columna_m1,organis,color_organis)
                                 celdas_2.AgregarOrganismoMuestra(limite_vertical, limite_horizontal, fila_m2,columna_m2,organis,color_organis,celdas_2, ListaProstera2)
+                                DibujarModificacion(celdas_2,limite_vertical, limite_horizontal)
                         if sub_menu_3 == 0:
                             print(Fore.LIGHTYELLOW_EX +"Salida del xml con la muestra nueva y termina ciclo ")
                             break
@@ -126,6 +128,7 @@ while True:
                             else: #No existe, entonces agrega la posicion
                                 # celdas_1.Insertar(fila_m1,columna_m1,organis,color_organis)
                                 celdas_3.AgregarOrganismoMuestra(limite_vertical, limite_horizontal, fila_m3,columna_m3,organis,color_organis,celdas_3, ListaProstera3)
+                                DibujarModificacion(celdas_3,limite_vertical, limite_horizontal)
                         if sub_menu_4 == 0:
                             print(Fore.LIGHTYELLOW_EX +"Salida del xml con la muestra nueva y termina ciclo ")
                             break
@@ -150,6 +153,7 @@ while True:
                             else: #No existe, entonces agrega la posicion
                                 # celdas_1.Insertar(fila_m1,columna_m1,organis,color_organis)
                                 celdas_4.AgregarOrganismoMuestra(limite_vertical, limite_horizontal, fila_m5,columna_m5,organis,color_organis,celdas_4, ListaProstera4)
+                                DibujarModificacion(celdas_4,limite_vertical, limite_horizontal)
                         if sub_menu_5 == 0:
                             print(Fore.LIGHTYELLOW_EX +"Salida del xml con la muestra nueva y termina ciclo ")
                             break
@@ -174,6 +178,7 @@ while True:
                             else: #No existe, entonces agrega la posicion
                                 # celdas_1.Insertar(fila_m1,columna_m1,organis,color_organis)
                                 celdas_5.AgregarOrganismoMuestra(limite_vertical, limite_horizontal, fila_m6,columna_m6,organis,color_organis,celdas_5, ListaProstera5)
+                                DibujarModificacion(celdas_5,limite_vertical, limite_horizontal)
                         if sub_menu_6 == 0:
                             print(Fore.LIGHTYELLOW_EX +"Salida del xml con la muestra nueva y termina ciclo ")
                             break

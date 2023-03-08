@@ -40,7 +40,7 @@ class Organismo:
         self.color = color
 
 class DibujoCelda:
-    def __init__(self, Columna, Fila, Color, Borde):
+    def __init__(self, Fila, Columna, Color, Borde):
         self.Columna = Columna
         self.Fila = Fila
         self.Color = Color

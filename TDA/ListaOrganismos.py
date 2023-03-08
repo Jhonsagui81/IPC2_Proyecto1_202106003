@@ -24,7 +24,7 @@ class ListaOrganismos:
         if self.limite == 8:
             self.color = '#229954'                             
 
-        NuevoNodo = NodoOrganismo(codigo, nombre, color)
+        NuevoNodo = NodoOrganismo(self.limite ,codigo, nombre, color)
         if self.Inicio == None:
             self.Inicio = NuevoNodo
             self.Final = NuevoNodo
@@ -44,6 +44,22 @@ class ListaOrganismos:
 
     def ObtenerNodos(self):
         return self.limite
+
+    def ObtenerNOmbre(self, id):
+        aux = self.Inicio
+        while aux != None:
+            if id == aux.ObtenerId():
+                color = aux.ObtenerNombre()
+                return color  
+            aux = aux.Siguiente
+
+    def ObtenerCodigo(self, id):
+        aux = self.Inicio
+        while aux != None:
+            if id == aux.ObtenerId():
+                color = aux.ObtenerCodigo()
+                return color  
+            aux = aux.Siguiente
 
     def ImprimirOrganismos(self):
         Auxiliar = self.Inicio

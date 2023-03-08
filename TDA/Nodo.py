@@ -68,10 +68,12 @@ class NodoMuestra:
 
 class NodoOrganismo:
 
-    def __init__(self, codigo, nombre, color):
-        self.Organismo = Organismo(codigo, nombre, color)
+    def __init__(self, id, codigo, nombre, color):
+        self.Organismo = Organismo(id, codigo, nombre, color)
         self.Siguiente = None
 
+    def ObtenerId(self):
+        return self.Organismo.id
     def ObtenerSiguiente(self):
         return self.Siguiente
     

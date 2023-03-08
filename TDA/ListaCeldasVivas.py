@@ -47,7 +47,7 @@ class ListaCeldas:
                                 break
                             else:
                                 #ingresa la posicion donde prospera 
-                                ListaProspera.Insertar(fila+contFila_inferior_derecha,columna+contColu_inferior_derecha, orga, "Silver")
+                                ListaProspera.Insertar(fila+contFila_inferior_derecha,columna+contColu_inferior_derecha, orga, '#17202a')
                                 print("Fila: "+str(fila+contFila_inferior_derecha)+" , Columna: "+str(columna+contColu_inferior_derecha))
                                 break
                         aux = aux.Siguiente
@@ -68,7 +68,7 @@ class ListaCeldas:
                             if(fila+contFila_inferior_izquierda < 0 or fila+contFila_inferior_izquierda > limiteVertical) and (columna-contColu_inferior_izquierda < 0 or columna-contColu_inferior_izquierda > limiteHorizontal): 
                                 break
                             else:
-                                ListaProspera.Insertar(fila+contFila_inferior_izquierda,columna-contColu_inferior_izquierda,orga,"Silver")
+                                ListaProspera.Insertar(fila+contFila_inferior_izquierda,columna-contColu_inferior_izquierda,orga,'#17202a')
                                 print("Fila: "+str(fila+contFila_inferior_izquierda)+" , Columna: "+str(columna-contColu_inferior_izquierda))
                                 break
                         aux = aux.Siguiente
@@ -88,7 +88,7 @@ class ListaCeldas:
                             if(fila-contFila_superior_derecha < 0 or fila-contFila_superior_derecha > limiteVertical)and(columna+contColu_superior_derecha < 0 or columna+contColu_superior_derecha > limiteHorizontal):
                                 break
                             else:
-                                ListaProspera.Insertar(fila-contFila_superior_derecha, columna+contColu_superior_derecha, orga, "Silver")
+                                ListaProspera.Insertar(fila-contFila_superior_derecha, columna+contColu_superior_derecha, orga, '#17202a')
                                 print("Fila: "+str(fila-contFila_superior_derecha)+" , Columna: "+str(columna+contColu_superior_derecha))
                                 break
                         aux = aux.Siguiente
@@ -108,7 +108,7 @@ class ListaCeldas:
                             if(fila-contFila_superior_izquierda < 0 or fila-contFila_superior_izquierda > limiteVertical)and(columna-contColu_superior_izquierda < 0 or columna-contColu_superior_izquierda > limiteHorizontal):
                                 break
                             else:
-                                ListaProspera.Insertar(fila-contFila_superior_izquierda, columna-contColu_superior_izquierda, orga, "Silver")
+                                ListaProspera.Insertar(fila-contFila_superior_izquierda, columna-contColu_superior_izquierda, orga, '#17202a')
                                 print("Fila: "+str(fila-contFila_superior_izquierda)+" , Columna: "+str(columna-contColu_superior_izquierda))
                                 break
                         aux = aux.Siguiente
@@ -128,7 +128,7 @@ class ListaCeldas:
                             if(fila+contFila_arriba < 0 or fila+contFila_arriba > limiteVertical):
                                 break
                             else:
-                                ListaProspera.Insertar(fila+contFila_arriba,columna,orga,"Silver")
+                                ListaProspera.Insertar(fila+contFila_arriba,columna,orga,'#17202a')
                                 print("Fila: "+str(fila+contFila_arriba)+" , Columna: "+str(columna))
                                 break
                         aux = aux.Siguiente
@@ -146,7 +146,7 @@ class ListaCeldas:
                             if(fila-contFila_abajo < 0 or fila-contFila_abajo > limiteVertical):
                                 break
                             else:
-                                ListaProspera.Insertar(fila-contFila_abajo,columna,orga,"Silver")
+                                ListaProspera.Insertar(fila-contFila_abajo,columna,orga,'#17202a')
                                 print("Fila: "+str(fila-contFila_abajo)+" , Columna: "+str(columna))
                                 break
                         aux = aux.Siguiente
@@ -166,7 +166,7 @@ class ListaCeldas:
                             if(columna+contColum_derecha < 0 or columna+contColum_derecha > limiteHorizontal):
                                 break
                             else:
-                                ListaProspera.Insertar(fila,columna+contColum_derecha, orga, "Silver")
+                                ListaProspera.Insertar(fila,columna+contColum_derecha, orga, '#17202a')
                                 print("Fila: "+str(fila)+" , Columna: "+str(columna+contColum_derecha))
                                 break
                         aux = aux.Siguiente
@@ -184,7 +184,7 @@ class ListaCeldas:
                             if(columna-contColum_izquierda < 0 or columna-contColum_izquierda > limiteHorizontal):
                                 break
                             else:
-                                ListaProspera.Insertar(fila, columna-contColum_izquierda, orga, "Silver")
+                                ListaProspera.Insertar(fila, columna-contColum_izquierda, orga, '#17202a')
                                 print("Fila: "+str(fila)+" , Columna: "+str(columna-contColum_izquierda))
                                 break
                         aux = aux.Siguiente
@@ -234,7 +234,8 @@ class ListaCeldas:
             #print("Fila: "+str(Fila+1) + " Columna: "+str(Columna+1))
             #print(Auxiliar.ObtenerFila(), Auxiliar.ObtenerColumna())
             if (Auxiliar.ObtenerFila() == Fila and Auxiliar.ObtenerColumna() == Columna):
-                return Auxiliar.ObtenerColor()
+                col = Auxiliar.ObtenerColor()
+                return col
             Auxiliar = Auxiliar.Siguiente
 
 
@@ -243,7 +244,8 @@ class ListaCeldas:
         Auxiliar = self.Inicio
         while Auxiliar != None:
             if Auxiliar.ObtenerOrganismoVivo() == codigo:
-                return Auxiliar.ObtenerColor()
+                colr = Auxiliar.ObtenerColor()
+                return colr
             Auxiliar = Auxiliar.Siguiente
 
     def CeldaEstaVacia(self, fila, columna):

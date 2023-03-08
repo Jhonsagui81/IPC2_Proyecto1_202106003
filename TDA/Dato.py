@@ -34,7 +34,8 @@ class DatoCelda:
         self.color = color
 
 class Organismo:
-    def __init__(self, codigo, nombre, color):
+    def __init__(self, id, codigo, nombre, color):
+        self.id = id
         self.codigo = codigo
         self.nombre = nombre
         self.color = color

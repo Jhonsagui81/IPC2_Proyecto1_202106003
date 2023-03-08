@@ -1,8 +1,9 @@
 from colorama import Fore
 from xml.dom import minidom
+import xml.etree.cElementTree as ET 
 
 def LecturaXML(my_muestras,celdas_1,celdas_2,celdas_3,celdas_4,celdas_5,my_organismos):
-# try:
+
     contadorTableros = 0
     print(Fore.LIGHTMAGENTA_EX+"\n\t")
     ruta = input(Fore.LIGHTMAGENTA_EX+"-> Ingrese la direccion del archivo que Generara las muestras iniciales: "+Fore.CYAN)
@@ -74,6 +75,3 @@ def LecturaXML(my_muestras,celdas_1,celdas_2,celdas_3,celdas_4,celdas_5,my_organ
                     my_muestras.Insertar(valor_codigo_muest, descripcio, valor_fila_muest, valor_columnas_muest,celdas_4)
                 elif contadorTableros == 5:
                     my_muestras.Insertar(valor_codigo_muest, descripcio, valor_fila_muest, valor_columnas_muest,celdas_5)        
-# except Exception as err:
-#     print(Fore.RED+"\n\tSe acaba de producir un error :( " + str(err))
-#     print(Fore.RED+"\tAsegurate de leer el MANUAL DE USUARIO")

@@ -32,7 +32,7 @@ while True:
             print(Fore.CYAN +"|    [1]. Cargar archivo de entrada                |")
             print(Fore.CYAN +"|    [2]. Seleccionar muestra a trabaja            |")
             print(Fore.CYAN +"|    [3]. Generar xml con muestras actualizadas    |")
-            print(Fore.CYAN +"|    [4]. Salir                                    |")
+            print(Fore.CYAN +"|    [4]. Salir   v                                |")
             print(Fore.CYAN +"|                                                  |")
             print(Fore.CYAN +"----------------------------------------------------")
             menu_principal_str = input(Fore.CYAN +"Ingrese un valor para seleccionar una opcion: ")
